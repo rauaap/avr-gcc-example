@@ -1,12 +1,13 @@
+SRC_DIR = src
+INCLUDE_DIR = include
+BUILD_DIR = build
+
 CC = avr-gcc
 OBJCOPY = avr-objcopy
 MCU = atmega328p
 F_CPU = 8000000UL
-CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Os -Wall -Wextra
+CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Os -Wall -Wextra -I$(INCLUDE_DIR)
 LDFLAGS = -mmcu=$(MCU)
-
-SRC_DIR = src
-BUILD_DIR = build
 
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
