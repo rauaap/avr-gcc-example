@@ -47,5 +47,5 @@ clean:
 flash: $(HEX)
 	avrdude -c stk500v1 -p $(MCU) -P /dev/ttyUSB0 -b 19200 -U flash:w:$<:i
 
-.PHONY: all clean
+.PHONY: all clean flash
 
