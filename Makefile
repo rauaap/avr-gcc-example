@@ -47,5 +47,8 @@ clean:
 flash: $(HEX)
 	avrdude -c stk500v1 -p $(MCU) -P /dev/ttyUSB0 -b 19200 -U flash:w:$<:i
 
+# tells make that these are not file targets
+# so even if our project contains a file with one of these
+# names it is not associated with this target
 .PHONY: all clean flash
 
