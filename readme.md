@@ -29,8 +29,8 @@ flowchart TB
 
 classDef binary fill:#225
 
-compile@{ label: avr-gcc<br>compilation, shape: stadium }
-link@{ label: avr-gcc<br>linking, shape: stadium }
+compile@{ label: gcc-avr<br>compilation, shape: stadium }
+link@{ label: gcc-avr<br>linking, shape: stadium }
 objcopy@{ label: avr-objcopy, shape: stadium }
 avrdude@{ label: avrdude, shape: stadium }
 atmega{{ATmega328P}}
