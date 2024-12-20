@@ -15,7 +15,7 @@ This project was made as an exercise in bare metal programming and using make as
 ## Hardware Components
 
 - FT232RL: USB-to-UART converter which transmits the programming commands to the first ATmega328P over USB.
-- The first ATmega328P: Used as the programmer which programs the seconds ATmega328P over SPI.
+- The first ATmega328P: Used as the programmer which programs the seconds ATmega328P over SPI. Powered by the [Arduino ISP](https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoISP/#use-arduino-as-isp) example sketch.
 - The second ATmega328P: The microcontroller the program code is flashed on to.
 - HD44780: A 16x2 LCD character display for displaying text, connected to the ATmega328P over I2C.
 
