@@ -8,6 +8,7 @@ MCU = atmega328p
 F_CPU = 8000000UL
 CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Os -Wall -Wextra -I$(INCLUDE_DIR)
 LDFLAGS = -mmcu=$(MCU)
+PROGRAMMER = stk500v1
 
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
@@ -46,7 +47,7 @@ clean:
 	rm -rf $(BUILD_DIR)
 
 flash: $(HEX)
-	avrdude -c stk500v1 -p $(MCU) -P /dev/ttyUSB0 -b 19200 -U flash:w:$<:i
+	avrdude -c $(PROGRAMMER) -p $(MCU) -P /dev/ttyUSB0 -b 19200 -U flash:w:$<:i
 
 # tells make that these are not file targets
 # so even if our project contains a file with one of these
